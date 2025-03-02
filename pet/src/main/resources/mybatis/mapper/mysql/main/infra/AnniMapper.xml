@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.userpet.demo.fapp.contactanniversary.AnniDao">
+
+	  <resultMap type="com.userpet.demo.fapp.contactanniversary.AnniDto" id="resultMapObj"></resultMap>
+	  
+	  <select id="selectList" resultMap="resultMapObj">
+	  	select
+			anniSeq,
+		    anniCalendar,
+		    anniList,
+		    anniDate,
+		    anniMain,
+		    contactAdd_contSeq
+		FROM
+			contactanniversary
+		WHERE 1=1
+		ORDER BY anniSeq DESC
+	  </select>
+</mapper>

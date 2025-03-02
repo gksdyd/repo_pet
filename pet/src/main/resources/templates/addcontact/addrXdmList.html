@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+
+<table>
+  <tr>
+    <td>addrSeq</td>
+    <td>addrList</td>
+    <td>addrZipCode</td>
+    <td>addrAddress</td>
+  </tr>
+  <tr th:each="addr : ${addr}">
+    <td th:text="${addr.addrSeq}"></td>
+    <td th:text="${addr.addrList}"></td>
+    <td th:text="${addr.addrZipCode}"></td>
+    <td th:text="${addr.addrAddress}"></td>
+  </tr>
+</table>

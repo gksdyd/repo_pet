@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+
+<table>
+  <tr>
+    <td>contSeq</td>
+    <td>contFirstName</td>
+    <td>contLastName</td>
+  </tr>
+  <tr th:each="list : ${list}">
+    <td th:text="${list.contSeq}"></td>
+    <td th:text="${list.contFirstName}"></td>
+    <td th:text="${list.contLastName}"></td>
+  </tr>
+</table>
+
+<a href="/addcontact/addrXdmList">address</a><br>
+<a href="/addcontact/anniXdmList">anniversary</a><br>
+<a href="/addcontact/compXdmList">company</a><br>
+<a href="/addcontact/mailXdmList">email</a><br>
+<a href="/addcontact/messXdmList">messenger</a><br>
+<a href="/addcontact/pageXdmList">page</a><br>
+<a href="/addcontact/phonXdmList">phone</a><br>
+<a href="/addcontact/grouXdmList">group</a><br>

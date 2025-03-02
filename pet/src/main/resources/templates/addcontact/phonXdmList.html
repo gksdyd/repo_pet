@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+
+<table>
+  <tr>
+    <td>phonSeq</td>
+    <td>phonNumber</td>
+    <td>phonList</td>
+    <td>phonMain</td>
+  </tr>
+  <tr th:each="phon : ${phon}">
+    <td th:text="${phon.phonSeq}"></td>
+    <td th:text="${phon.phonNumber}"></td>
+    <td th:text="${phon.phonList}"></td>
+    <td th:text="${phon.phonMain}"></td>
+  </tr>
+</table>

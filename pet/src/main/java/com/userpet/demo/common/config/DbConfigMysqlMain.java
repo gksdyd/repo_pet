@@ -1,4 +1,4 @@
-package com.user_pet.demo.common.config;
+package com.userpet.demo.common.config;
 
 import javax.sql.DataSource;
 
@@ -16,7 +16,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-@MapperScan(basePackages="com.pet_user.demo.*"     						//#-->	*dao 찾는 영역
+@MapperScan(basePackages="com.userpet.demo.*"     						//#-->	*dao 찾는 영역
         ,sqlSessionFactoryRef="sqlSessionFactoryMysqlMain")         	//#-->
 @EnableTransactionManagement
 

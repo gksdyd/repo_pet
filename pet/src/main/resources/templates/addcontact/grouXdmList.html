@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+
+<table>
+  <tr>
+    <td>grouSeq</td>
+    <td>grouName</td>
+  </tr>
+  <tr th:each="grou : ${grou}">
+    <td th:text="${grou.grouSeq}"></td>
+    <td th:text="${grou.grouName}"></td>
+  </tr>
+</table>

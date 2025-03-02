@@ -1,4 +1,4 @@
-package com.user_pet.demo;
+package com.userpet.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

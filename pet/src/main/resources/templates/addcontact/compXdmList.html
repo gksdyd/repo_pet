@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+
+<table>
+  <tr>
+    <td>compSeq</td>
+    <td>compName</td>
+    <td>compDepartment</td>
+    <td>compPosition</td>
+    <td>compMain</td>
+  </tr>
+  <tr th:each="comp : ${comp}">
+    <td th:text="${comp.compSeq}"></td>
+    <td th:text="${comp.compName}"></td>
+    <td th:text="${comp.compDepartment}"></td>
+    <td th:text="${comp.compPosition}"></td>
+    <td th:text="${comp.compMain}"></td>
+  </tr>
+</table>

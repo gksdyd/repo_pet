@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+
+<table>
+  <tr>
+    <td>pageSeq</td>
+    <td>pageAddress</td>
+    <td>pageMain</td>
+  </tr>
+  <tr th:each="page : ${page}">
+    <td th:text="${page.pageSeq}"></td>
+    <td th:text="${page.pageAddress}"></td>
+    <td th:text="${page.pageMain}"></td>
+  </tr>
+</table>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+
+<table>
+  <tr>
+    <td>anniSeq</td>
+    <td>anniCalendar</td>
+    <td>anniList</td>
+    <td>anniDate</td>
+  </tr>
+  <tr th:each="anni : ${anni}">
+    <td th:text="${anni.anniSeq}"></td>
+    <td th:text="${anni.anniCalendar}"></td>
+    <td th:text="${anni.anniList}"></td>
+    <td th:text="${anni.anniDate}"></td>
+  </tr>
+</table>

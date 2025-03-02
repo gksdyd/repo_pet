@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.userpet.demo.fapp.contactaddress.AddrDao">
+
+	  <resultMap type="com.userpet.demo.fapp.contactaddress.AddrDto" id="resultMapObj"></resultMap>
+	  
+	  <select id="selectList" resultMap="resultMapObj">
+	  	select
+			addrSeq,
+		    addrList,
+		    addrZipCode,
+		    addrAddress,
+		    addrMain,
+		    contactAdd_contSeq
+		FROM
+			contactaddress
+		WHERE 1=1
+		ORDER BY addrSeq DESC
+	  </select>
+</mapper>

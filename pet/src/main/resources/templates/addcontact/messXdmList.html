@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+
+<table>
+  <tr>
+    <td>messSeq</td>
+    <td>messList</td>
+    <td>messMain</td>
+  </tr>
+  <tr th:each="mess : ${mess}">
+    <td th:text="${mess.messSeq}"></td>
+    <td th:text="${mess.messList}"></td>
+    <td th:text="${mess.messMain}"></td>
+  </tr>
+</table>
