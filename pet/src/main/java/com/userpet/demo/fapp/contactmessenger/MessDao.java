@@ -8,4 +8,7 @@ import org.springframework.stereotype.Repository;
 public interface MessDao {
 
 	public List<MessDto> selectList();
+	public MessDto selectOne(MessDto messDto);
+	public int insert(MessDto messDto);
+	public int update(MessDto messDto);
 }

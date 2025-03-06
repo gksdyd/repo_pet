@@ -8,4 +8,7 @@ import org.springframework.stereotype.Repository;
 public interface PhonDao {
 
 	public List<PhonDto> selectList();
+	public PhonDto selectOne(PhonDto phonDto);
+	public int insert(PhonDto phonDto);
+	public int update(PhonDto phonDto);
 }

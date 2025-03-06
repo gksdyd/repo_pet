@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+
+<form action="/compcontact/compXdmUpdate" method="post" id="form">
+	<input type="hidden" name="compSeq" th:value="${item.compSeq}"/>
+	회사이름: <input type="text" name="compName" id="compName" th:value="${item.compName}"/>
+	부서: <input type="text" name="compDepartment" id="compDepartment" th:value="${item.compDepartment}"/>
+	직급: <input type="text" name="compPosition" id="compPosition" th:value="${item.compPosition}"/>
+	중요도: <input type="text" name="compMain" id="compMain" placeholder="0 or 1" th:value="${item.compMain}"/>
+	seq: <input type="text" name="contactAdd_contSeq" id="contactAdd_contSeq" th:value="${item.contactAdd_contSeq}"/>
+	<button type="button" id="btnSave">저장</button>
+</form>
+
+<script type="text/javascript">
+	document.getElementById("btnSave").onclick = function () {
+		document.getElementById("form").submit();
+	}
+</script>
+
+</body>

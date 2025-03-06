@@ -6,6 +6,7 @@ public class PhonDto {
 	private String phonNumber;
 	private String phonList;
 	private int phonMain;
+	private String contactAdd_contSeq;
 	
 	public String getPhonSeq() {
 		return phonSeq;
@@ -30,5 +31,11 @@ public class PhonDto {
 	}
 	public void setPhonMain(int phonMain) {
 		this.phonMain = phonMain;
+	}
+	public String getContactAdd_contSeq() {
+		return contactAdd_contSeq;
+	}
+	public void setContactAdd_contSeq(String contactAdd_contSeq) {
+		this.contactAdd_contSeq = contactAdd_contSeq;
 	}
 }

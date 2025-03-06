@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+
+<table>
+  <tr>
+    <td>contSeq</td>
+    <td>contFirstName</td>
+    <td>contLastName</td>
+  </tr>
+  <tr>
+    <td th:text="${item.contSeq}"></td>
+    <td th:text="${item.contFirstName}"></td>
+    <td th:text="${item.contLastName}"></td>
+  </tr>
+</table>
+<br>
+<br>
+<a href="/addcontact/addXdmList">목록</a>
+<a href="">삭제</a>
+<a th:href="@{/addcontact/addXdmMfom(contSeq=${item.contSeq})}">수정</a>

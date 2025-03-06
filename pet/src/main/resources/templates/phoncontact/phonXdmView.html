@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+
+<table>
+  <tr>
+    <td>phonSeq</td>
+    <td>phonNumber</td>
+    <td>phonList</td>
+    <td>phonMain</td>
+  </tr>
+  <tr>
+    <td th:text="${item.phonSeq}"></td>
+    <td th:text="${item.phonNumber}"></td>
+    <td th:text="${item.phonList}"></td>
+    <td th:text="${item.phonMain}"></td>
+  </tr>
+</table>
+<a href="/phoncontact/phonXdmList">목록</a>
+<a href="">삭제</a>
+<a th:href="@{/phoncontact/phonXdmMfom(phonSeq=(${item.phonSeq}))}">수정</a>

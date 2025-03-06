@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+
+<table>
+  <tr>
+    <td>compSeq</td>
+    <td>compName</td>
+    <td>compDepartment</td>
+    <td>compPosition</td>
+    <td>compMain</td>
+    <td>contactAdd_contSeq</td>
+  </tr>
+  <tr>
+    <td th:text="${item.compSeq}"></td>
+    <td th:text="${item.compName}"></td>
+    <td th:text="${item.compDepartment}"></td>
+    <td th:text="${item.compPosition}"></td>
+    <td th:text="${item.compMain}"></td>
+    <td th:text="${item.contactAdd_contSeq}"></td>
+  </tr>
+</table>
+<a href="/compcontact/compXdmList">목록</a>
+<a href="">삭제</a>
+<a th:href="@{/compcontact/compXdmMfom(compSeq=${item.compSeq})}">수정</a>

@@ -13,9 +13,39 @@ public class CompController {
 	@Autowired
 	CompService compService;
 	
-	@RequestMapping(value="/addcontact/compXdmList")
+	@RequestMapping(value="/compcontact/compXdmList")
 	public String codeGroupXdmList(Model model) {
 		model.addAttribute("comp", compService.selectList());
-		return "addcontact/compXdmList";
+		return "compcontact/compXdmList";
+	}
+	
+	@RequestMapping(value="/compcontact/compXdmView")
+	public String codeGroupXdmView(Model model, CompDto compDto) {
+		model.addAttribute("item", compService.selectOne(compDto));
+		return "compcontact/compXdmView";
+	}
+	
+	@RequestMapping(value="/compcontact/compXdmForm")
+	public String codeGroupXdmForm() {
+		return "compcontact/compXdmForm";
+	}
+	
+	@RequestMapping(value="/compcontact/compXdmInst")
+	public String codeGroupXdmInst(CompDto compDto) {
+		compService.insert(compDto);
+		return "redirect:/compcontact/compXdmList";
+	}
+	
+	@RequestMapping(value="/compcontact/compXdmMfom")
+	public String codeGroupXdmMfom(Model model, CompDto compDto) {
+		model.addAttribute("item", compService.selectOne(compDto));
+		return "compcontact/compXdmMfom";
+	}
+	
+	@RequestMapping(value="/compcontact/compXdmUpdate")
+	public String codeGroupXdmUpdate(CompDto compDto) {
+		compService.update(compDto);
+		System.out.println(compDto.getContactAdd_contSeq());
+		return "redirect:/compcontact/compXdmList";
 	}
 }

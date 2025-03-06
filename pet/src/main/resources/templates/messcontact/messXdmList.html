@@ -12,7 +12,8 @@
   </tr>
   <tr th:each="mess : ${mess}">
     <td th:text="${mess.messSeq}"></td>
-    <td th:text="${mess.messList}"></td>
+    <td><a th:href="@{/messcontact/messXdmView(messSeq=${mess.messSeq})}" th:text="${mess.messList}"></a></td>
     <td th:text="${mess.messMain}"></td>
   </tr>
 </table>
+<a href="/messcontact/messXdmForm">등록</a>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+
+<form action="/messcontact/messXdmInst" method="post" id="form">
+	목록: <input type="text" name="messList" id="messList"/>
+	주소: <input type="text" name="messAddress" id="messAddress"/>
+	중요도: <input type="text" name="messMain" id="messMain" placeholder="0 or 1"/>
+	seq: <input type="text" name="contactAdd_contSeq" id="contactAdd_contSeq"/>
+	<button type="button" id="btnSave">저장</button>
+</form>
+
+<script type="text/javascript">
+	document.getElementById("btnSave").onclick = function () {
+		document.getElementById("form").submit();
+	}
+</script>
+
+</body>

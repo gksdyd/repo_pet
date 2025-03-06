@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+
+<form action="/addrcontact/addrXdmUpdate" method="post" id="form">
+	<input type="hidden" name="addrSeq" th:value="${item.addrSeq}"/>
+	주소 목록: <input type="text" name="addrList" id="addrList" maxlength="45" placeholder="주소 항목" th:value="${item.addrList}"/>
+	주소: <input type="text" name="addrAddress" id="addrAddress" placeholder="주소" th:value="${item.addrAddress}"/>
+	addSeq: <input type="text" name="contactAdd_contSeq" id="contactAdd_contSeq" th:value="${item.contactAdd_contSeq}"/>
+	중요도: <input type="text" name="addrMain" id="addrMain" placeholder="1/0" th:value="${item.addrMain}"/>
+	<button type="button" id="btnSave">저장</button>
+</form>
+
+<script type="text/javascript">
+	document.getElementById("btnSave").onclick = function () {
+		document.getElementById("form").submit();
+	}
+</script>
+
+</body>

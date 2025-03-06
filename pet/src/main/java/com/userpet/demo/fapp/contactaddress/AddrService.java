@@ -14,4 +14,16 @@ public class AddrService {
 	public List<AddrDto> selectList() {
 		return addrDao.selectList();
 	}
+	
+	public AddrDto selectOne(AddrDto addrDto) {
+		return addrDao.selectOne(addrDto);
+	}
+	
+	public int insert(AddrDto addrDto) {
+		return addrDao.insert(addrDto);
+	}
+	
+	public int update(AddrDto addrDto) {
+		return addrDao.update(addrDto);
+	}
 }

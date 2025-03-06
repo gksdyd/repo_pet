@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+
+<form action="/phoncontact/phonXdmUpdate" method="post" id="form">
+	<input type="hidden" name="phonSeq" th:value="${item.phonSeq}"/>
+	번호: <input type="text" name="phonNumber" id="phonNumber" th:value="${item.phonNumber}"/>
+	항목: <input type="text" name="phonList" id="phonList" th:value="${item.phonList}"/>
+	중요도: <input type="text" name="phonMain" id="phonMain" placeholder="0 or 1" th:value="${item.phonMain}"/>
+	seq: <input type="text" name="contactAdd_contSeq" id="contactAdd_contSeq" th:value="${item.contactAdd_contSeq}"/>
+	<button type="button" id="btnSave">저장</button>
+</form>
+
+<script type="text/javascript">
+	document.getElementById("btnSave").onclick = function () {
+		document.getElementById("form").submit();
+	}
+</script>
+
+</body>

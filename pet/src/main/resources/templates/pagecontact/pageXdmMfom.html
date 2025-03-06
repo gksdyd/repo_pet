@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+
+<form action="/pagecontact/pageXdmUpdate" method="post" id="form">
+	<input type="hidden" name="pageSeq" th:value="${item.pageSeq}"/>
+	주소: <input type="text" name="pageAddress" id="pageAddress" th:value="${item.pageAddress}"/>
+	중요도: <input type="text" name="pageMain" id="pageMain" placeholder="0 or 1" th:value="${item.pageMain}"/>
+	seq: <input type="text" name="contactAdd_contSeq" id="contactAdd_contSeq" th:value="${item.contactAdd_contSeq}"/>
+	<button type="button" id="btnSave">저장</button>
+</form>
+
+<script type="text/javascript">
+	document.getElementById("btnSave").onclick = function () {
+		document.getElementById("form").submit();
+	}
+</script>
+
+</body>

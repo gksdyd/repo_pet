@@ -14,4 +14,16 @@ public class GrouService {
 	public List<GrouDto> selectList() {
 		return grouDao.selectList();
 	}
+	
+	public GrouDto selectOne(GrouDto grouDto) {
+		return grouDao.selectOne(grouDto);
+	}
+	
+	public int insert(GrouDto grouDto) {
+		return grouDao.insert(grouDto);
+	}
+	
+	public int update(GrouDto grouDto) {
+		return grouDao.update(grouDto);
+	}
 }

@@ -16,4 +16,50 @@
 		where 1=1
 		order by compSeq desc
 	</select>
+	
+	<select id="selectOne" resultMap="resultMapObj">
+		select
+			compSeq,
+			compName,
+			compDepartment,
+			compPosition,
+			compMain,
+			contactAdd_contSeq
+		from
+			contactcompany
+		where 1=1
+			and compSeq = #{compSeq}
+		order by compSeq desc
+	</select>
+	
+	<insert id="insert">
+		insert into contactcompany (
+			compName,
+		    compDepartment,
+		    compPosition,
+			contactAdd_contSeq,
+		    compMain
+		) values (
+			#{compName},
+			#{compDepartment},
+			#{compPosition},
+			#{contactAdd_contSeq},
+			#{compMain}
+		)
+		<selectKey resultType="String" keyProperty="compSeq" order="AFTER">
+			SELECT last_insert_id()
+		</selectKey>
+	</insert>
+	
+	<update id="update">
+		update contactcompany
+		set
+			compName = #{compName},
+		    compDepartment = #{compDepartment},
+		    compPosition = #{compPosition},
+			contactAdd_contSeq = #{contactAdd_contSeq},
+		    compMain = #{compMain}
+		where
+			compSeq = #{compSeq}
+	</update>
 </mapper>

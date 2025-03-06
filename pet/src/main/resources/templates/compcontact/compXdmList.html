@@ -14,9 +14,11 @@
   </tr>
   <tr th:each="comp : ${comp}">
     <td th:text="${comp.compSeq}"></td>
-    <td th:text="${comp.compName}"></td>
+    <td><a th:href="@{/compcontact/compXdmView(compSeq=${comp.compSeq})}" th:text="${comp.compName}"></a></td>
     <td th:text="${comp.compDepartment}"></td>
     <td th:text="${comp.compPosition}"></td>
     <td th:text="${comp.compMain}"></td>
   </tr>
 </table>
+
+<a href="/compcontact/compXdmForm">등록</a>

@@ -8,4 +8,7 @@ import org.springframework.stereotype.Repository;
 public interface GrouDao {
 
 	public List<GrouDto> selectList();
+	public GrouDto selectOne(GrouDto grouDto);
+	public int insert(GrouDto grouDto);
+	public int update(GrouDto grouDto);
 }

@@ -24,9 +24,39 @@ public class AnniController {
 //		return "addcontact/anniXdmList";
 //	}
 	
-	@RequestMapping(value="/addcontact/anniXdmList")
+	@RequestMapping(value="/annicontact/anniXdmList")
 	public String codeGroupXdmList(Model model) {
 		model.addAttribute("anni", anniService.selectList());
-		return "addcontact/anniXdmList";
+		return "annicontact/anniXdmList";
+	}
+	
+	@RequestMapping(value="/annicontact/anniXdmView")
+	public String codeGroupXdmView(Model model, AnniDto anniDto) {
+		model.addAttribute("item", anniService.selectOne(anniDto));
+		return "annicontact/anniXdmView";
+	}
+	
+	@RequestMapping(value="/annicontact/anniXdmForm")
+	public String codeGroupXdmForm() {
+		return "annicontact/anniXdmForm";
+	}
+	
+	@RequestMapping(value="/annicontact/anniXdmInst")
+	public String codeGroupXdmInst(AnniDto anniDto) {
+		System.out.println(anniDto.getContactAdd_contSeq());
+		anniService.insert(anniDto);
+		return "redirect:/annicontact/anniXdmList";
+	}
+	
+	@RequestMapping(value="/annicontact/anniXdmMfom")
+	public String codeGroupXdmMfom(Model model, AnniDto anniDto) {
+		model.addAttribute("item", anniService.selectOne(anniDto));
+		return "annicontact/anniXdmMfom";
+	}
+	
+	@RequestMapping(value="/annicontact/anniXdmUpdate")
+	public String codeGroupXdmUpdate(AnniDto anniDto) {
+		anniService.update(anniDto);
+		return "redirect:/annicontact/anniXdmList";
 	}
 }

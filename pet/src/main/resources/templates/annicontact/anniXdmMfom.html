@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+
+<form action="/annicontact/anniXdmUpdate" method="post" id="form">
+	<input type="hidden" name="anniSeq" th:value="${item.anniSeq}"/>
+	양력/음력: <input type="text" name="anniCalendar" id="anniCalendar" placeholder="0 or 1" th:value="${item.anniCalendar}"/>
+	기념일: <input type="text" name="anniList" id="anniList" th:value="${item.anniList}"/>
+	날짜: <input type="date" name="anniDate" id="anniDate" th:value="${item.anniDate}"/>
+	중요도: <input type="text" name="anniMain" id="anniMain" placeholder="0 or 1" th:value="${item.anniMain}"/>
+	seq: <input type="text" name="contactAdd_contSeq" id="contactAdd_contSeq" th:value="${item.contactAdd_contSeq}"/>
+	<button type="button" id="btnSave">저장</button>
+</form>
+
+<script type="text/javascript">
+	document.getElementById("btnSave").onclick = function () {
+		document.getElementById("form").submit();
+	}
+</script>
+
+</body>

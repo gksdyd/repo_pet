@@ -26,4 +26,16 @@ public class AddService {
 	public List<AddDto> selectList() {
 		return addDao.selectList();
 	}
+	
+	public AddDto selectOne(AddDto addDto) {
+		return addDao.selectOne(addDto);
+	}
+	
+	public int insert(AddDto addDto) {
+		return addDao.insert(addDto);
+	}
+	
+	public int update(AddDto addDto) {
+		return addDao.update(addDto);
+	}
 }

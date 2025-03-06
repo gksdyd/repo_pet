@@ -14,4 +14,42 @@
 		where 1=1
 		order by pageSeq
 	</select>
+	
+	<select id="selectOne" resultMap="resultMapObj">
+		select
+			pageSeq,
+			pageAddress,
+			pageMain,
+			contactAdd_contSeq
+		from
+			contactpage
+		where 1=1
+			and pageSeq = #{pageSeq}
+		order by pageSeq
+	</select>
+	
+	<insert id="insert">
+		insert into contactpage(
+			pageAddress,
+			contactAdd_contSeq,
+		    pageMain
+		) values (
+			#{pageAddress},
+			#{contactAdd_contSeq},
+			#{pageMain}
+		)
+		<selectKey resultType="String" keyProperty="pageSeq" order="AFTER">
+			SELECT last_insert_id()
+		</selectKey>
+	</insert>
+	
+	<update id="update">
+		update contactpage
+		set
+			pageAddress = #{pageAddress},
+			contactAdd_contSeq = #{contactAdd_contSeq},
+		    pageMain = #{pageMain}
+		where
+			pageSeq = #{pageSeq}
+	</update>
 </mapper>

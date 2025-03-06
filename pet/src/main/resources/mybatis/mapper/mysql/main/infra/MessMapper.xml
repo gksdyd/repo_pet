@@ -14,4 +14,45 @@
 		where 1=1
 		order by messSeq
 	</select>
+	
+	<select id="selectOne" resultMap="resultMapObj">
+		select
+			messSeq,
+			messList,
+			messMain,
+			contactAdd_contSeq
+		from
+			contactmessenger
+		where 1=1
+			and messSeq = #{messSeq}
+		order by messSeq
+	</select>
+	
+	<insert id="insert">
+		insert into contactmessenger(
+			messList,
+		    messAddress,
+			contactAdd_contSeq,
+		    messMain
+		) values (
+			#{messList},
+			#{messAddress},
+			#{contactAdd_contSeq},
+			#{messMain}
+		)
+		<selectKey resultType="String" keyProperty="messSeq" order="AFTER">
+			SELECT last_insert_id()
+		</selectKey>
+	</insert>
+	
+	<update id="update">
+		update contactmessenger
+		set
+			messList = #{messList},
+		    messAddress = #{messAddress},
+			contactAdd_contSeq = #{contactAdd_contSeq},
+		    messMain = #{messMain}
+		where
+			messSeq = #{messSeq}
+	</update>
 </mapper>

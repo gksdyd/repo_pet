@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+
+<table>
+  <tr>
+    <td>mailSeq</td>
+    <td>mailAddr</td>
+    <td>mailMain</td>
+  </tr>
+  <tr>
+    <td th:text="${item.mailSeq}"></td>
+    <td th:text="${item.mailAddr}"></td>
+    <td th:text="${item.mailMain}"></td>
+  </tr>
+</table>
+<a href="/mailcontact/mailXdmList">목록</a>
+<a href="">삭제</a>
+<a th:href="@{/mailcontact/mailXdmMfom(mailSeq=${item.mailSeq})}">수정</a>

@@ -26,4 +26,16 @@ public class AnniService {
 	public List<AnniDto> selectList() {
 		return anniDao.selectList();
 	}
+	
+	public AnniDto selectOne(AnniDto anniDto) {
+		return anniDao.selectOne(anniDto);
+	}
+	
+	public int insert(AnniDto anniDto) {
+		return anniDao.insert(anniDto);
+	}
+	
+	public int update(AnniDto anniDto) {
+		return anniDao.update(anniDto);
+	}
 }

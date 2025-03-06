@@ -14,4 +14,16 @@ public class PhonService {
 	public List<PhonDto> selectList() {
 		return phonDao.selectList();
 	}
+	
+	public PhonDto selectOne(PhonDto phonDto) {
+		return phonDao.selectOne(phonDto);
+	}
+	
+	public int insert(PhonDto phonDto) {
+		return phonDao.insert(phonDto);
+	}
+	
+	public int update(PhonDto phonDto) {
+		return phonDao.update(phonDto);
+	}
 }

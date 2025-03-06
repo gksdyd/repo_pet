@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+
+<table>
+  <tr>
+    <td>pageSeq</td>
+    <td>pageAddress</td>
+    <td>pageMain</td>
+  </tr>
+  <tr>
+    <td th:text="${item.pageSeq}"></td>
+    <td th:text="${item.pageAddress}"></td>
+    <td th:text="${item.pageMain}"></td>
+  </tr>
+</table>
+<a href="/pagecontact/pageXdmList">목록</a>
+<a href="">삭제</a>
+<a th:href="@{/pagecontact/pageXdmMfom(pageSeq=${item.pageSeq})}">수정</a>

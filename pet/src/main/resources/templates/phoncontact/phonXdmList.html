@@ -13,8 +13,9 @@
   </tr>
   <tr th:each="phon : ${phon}">
     <td th:text="${phon.phonSeq}"></td>
-    <td th:text="${phon.phonNumber}"></td>
+    <td><a th:href="@{/phoncontact/phonXdmView(phonSeq=${phon.phonSeq})}" th:text="${phon.phonNumber}"></a></td>
     <td th:text="${phon.phonList}"></td>
     <td th:text="${phon.phonMain}"></td>
   </tr>
 </table>
+<a href="/phoncontact/phonXdmForm">등록</a>

@@ -23,4 +23,70 @@
 		WHERE 1=1
 		ORDER BY contSeq DESC
 	  </select>
+	  
+	  <select id="selectOne" resultMap="resultMapObj">
+	  	select
+			contSeq,
+		    contFirstName,
+		    contLastName,
+		    contHonorificTitle,
+		    contMidName,
+		    contTitle,
+		    contId,
+		    contNickname,
+		    contMemo,
+		    contImage,
+		    contImportant
+		FROM
+			contactadd
+		WHERE 1=1
+			and contSeq = #{contSeq}
+		ORDER BY contSeq DESC
+	  </select>
+	  
+	  <insert id="insert">
+	  	insert into contactadd (
+		    contFirstName,
+		    contLastName,
+		    contHonorificTitle,
+		    contMidName,
+		    contTitle,
+		    contId,
+		    contNickname,
+		    contMemo,
+		    contImage,
+		    contImportant
+		) values (
+		    #{contFirstName},
+		    #{contLastName},
+		    #{contHonorificTitle},
+		    #{contMidName},
+		    #{contTitle},
+		    #{contId},
+		    #{contNickname},
+		    #{contMemo},
+		    #{contImage},
+		    #{contImportant}
+		)
+		<selectKey resultType="String" keyProperty="contSeq" order="AFTER">
+			SELECT last_insert_id()
+		</selectKey>
+	  </insert>
+	  
+	  <update id="update">
+	  	UPDATE contactadd
+		SET
+			contFirstName = #{contFirstName},
+		    contLastName = #{contLastName},
+		    contHonorificTitle = #{contHonorificTitle},
+		    contMidName = #{contMidName},
+		    contTitle = #{contTitle},
+		    contId = #{contId},
+		    contNickname = #{contNickname},
+		    contMemo = #{contMemo},
+		    contImage = #{contImage},
+		    contImportant = #{contImportant}
+		where
+			contSeq = #{contSeq}
+	  </update>
 </mapper>

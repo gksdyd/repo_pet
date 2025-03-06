@@ -6,8 +6,8 @@ public class AddrDto {
 	private String addrList;
 	private String addrZipCode;
 	private String addrAddress;
-	private Integer addrMain;
 	private String contactAdd_contSeq;
+	private Integer addrMain;
 	
 	public String getAddrSeq() {
 		return addrSeq;
@@ -33,16 +33,16 @@ public class AddrDto {
 	public void setAddrAddress(String addrAddress) {
 		this.addrAddress = addrAddress;
 	}
-	public int getAddMain() {
-		return addrMain;
-	}
-	public void setAddMain(int addMain) {
-		this.addrMain = addMain;
-	}
 	public String getContactAdd_contSeq() {
 		return contactAdd_contSeq;
 	}
 	public void setContactAdd_contSeq(String contactAdd_contSeq) {
 		this.contactAdd_contSeq = contactAdd_contSeq;
+	}
+	public Integer getAddrMain() {
+		return addrMain;
+	}
+	public void setAddrMain(Integer addrMain) {
+		this.addrMain = addrMain;
 	}
 }

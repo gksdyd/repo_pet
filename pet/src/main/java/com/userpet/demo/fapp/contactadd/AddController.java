@@ -29,4 +29,36 @@ public class AddController {
 		model.addAttribute("list", addService.selectList());
 		return "addcontact/addXdmList";
 	}
+	
+	@RequestMapping(value="/addcontact/addXdmView")
+	public String codeGroupXdmView(Model model, AddDto addDto) {
+		model.addAttribute("item", addService.selectOne(addDto));
+		return "addcontact/addXdmView";
+	}
+	
+	@RequestMapping(value="/addcontact/addXdmForm")
+	public String codeGroupXdmForm() {
+		return "addcontact/addXdmForm";
+	}
+	
+	@RequestMapping(value="/addcontact/addXdmInst")
+	public String codeGroupXdmInst(AddDto addDto) {
+		System.out.println(addDto.getContSeq());
+		addService.insert(addDto);
+		System.out.println(addDto.getContSeq());
+		return "redirect:/addcontact/addXdmList";
+	}
+	
+	@RequestMapping(value="/addcontact/addXdmMfom")
+	public String codeGroupXdmMfom(Model model, AddDto addDto) {
+		model.addAttribute("item", addService.selectOne(addDto));
+		return "addcontact/addXdmMfom";
+	}
+	
+	@RequestMapping(value="/addcontact/addXdmUpdate")
+	public String codeGroupXdmUpdate(AddDto addDto) {
+		addService.update(addDto);
+		System.out.println(addDto.getContSeq());
+		return "redirect:/addcontact/addXdmList";
+	}
 }

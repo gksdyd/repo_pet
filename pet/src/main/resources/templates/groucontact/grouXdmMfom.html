@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+
+<form action="/groucontact/grouXdmUpdate" method="post" id="form">
+	<input type="hidden" name="grouSeq" th:value="${item.grouSeq}"/>
+	이름: <input type="text" name="grouName" id="grouName" th:value="${item.grouName}"/>
+	<button type="button" id="btnSave">저장</button>
+</form>
+
+<script type="text/javascript">
+	document.getElementById("btnSave").onclick = function () {
+		document.getElementById("form").submit();
+	}
+</script>
+
+</body>

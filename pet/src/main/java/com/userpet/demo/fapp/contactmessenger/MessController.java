@@ -11,9 +11,38 @@ public class MessController {
 	@Autowired
 	MessService messService;
 	
-	@RequestMapping(value = "/addcontact/messXdmList")
+	@RequestMapping(value = "/messcontact/messXdmList")
 	public String codeGroupXdmList(Model model) {
 		model.addAttribute("mess", messService.selectList());
-		return "addcontact/messXdmList";
+		return "messcontact/messXdmList";
+	}
+	
+	@RequestMapping(value = "/messcontact/messXdmView")
+	public String codeGroupXdmView(Model model, MessDto messDto) {
+		model.addAttribute("item", messService.selectOne(messDto));
+		return "messcontact/messXdmView";
+	}
+	
+	@RequestMapping(value = "/messcontact/messXdmForm")
+	public String codeGroupXdmForm() {
+		return "messcontact/messXdmForm";
+	}
+	
+	@RequestMapping(value = "/messcontact/messXdmInst")
+	public String codeGroupXdmInst(MessDto messDto) {
+		messService.insert(messDto);
+		return "redirect:/messcontact/messXdmList";
+	}
+	
+	@RequestMapping(value = "/messcontact/messXdmMfom")
+	public String codeGroupXdmMfom(Model model, MessDto messDto) {
+		model.addAttribute("item", messService.selectOne(messDto));
+		return "messcontact/messXdmMfom";
+	}
+	
+	@RequestMapping(value = "/messcontact/messXdmUpdate")
+	public String codeGroupXdmUpdate(MessDto messDto) {
+		messService.update(messDto);
+		return "redirect:/messcontact/messXdmList";
 	}
 }

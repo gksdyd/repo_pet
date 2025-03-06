@@ -18,4 +18,50 @@
 		WHERE 1=1
 		ORDER BY anniSeq DESC
 	  </select>
+	  
+	  <select id="selectOne" resultMap="resultMapObj">
+	  	select
+			anniSeq,
+		    anniCalendar,
+		    anniList,
+		    anniDate,
+		    anniMain,
+		    contactAdd_contSeq
+		FROM
+			contactanniversary
+		WHERE 1=1
+			and anniSeq = #{anniSeq}
+		ORDER BY anniSeq DESC
+	  </select>
+	  
+	  <insert id="insert">
+	  	insert into contactanniversary (
+	  		anniCalendar,
+		    anniList,
+		    anniDate,
+		    contactAdd_contSeq,
+		    anniMain
+	  	) values (
+	  		#{anniCalendar},
+	  		#{anniList},
+	  		#{anniDate},
+	  		#{contactAdd_contSeq},
+	  		#{anniMain}
+	  	)
+	  	<selectKey resultType="String" keyProperty="anniSeq" order="AFTER">
+	  		SELECT last_insert_id()
+	  	</selectKey>
+	  </insert>
+	  
+	  <update id="update">
+	  	update contactanniversary
+	  	set
+	  		anniCalendar = #{anniCalendar},
+		    anniList = #{anniList},
+		    anniDate = #{anniDate},
+		    contactAdd_contSeq = #{contactAdd_contSeq},
+		    anniMain = #{anniMain}
+		where
+			anniSeq = #{anniSeq}
+	  </update>
 </mapper>

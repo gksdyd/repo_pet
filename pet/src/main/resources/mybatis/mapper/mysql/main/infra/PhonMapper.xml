@@ -15,4 +15,46 @@
 		where 1=1
 		order by phonSeq
 	</select>
+	
+	<select id="selectOne" resultMap="resultMapObj">
+		select
+			phonSeq,
+			phonNumber,
+			phonList,
+			phonMain,
+			contactAdd_contSeq
+		from
+			contactphone
+		where 1=1
+			and phonSeq = #{phonSeq}
+		order by phonSeq
+	</select>
+	
+	<insert id="insert">
+		insert into contactphone(
+			phonNumber,
+		    phonList,
+			contactAdd_contSeq,
+		    phonMain
+		) values (
+			#{phonNumber},
+			#{phonList},
+			#{contactAdd_contSeq},
+			#{phonMain}
+		)
+		<selectKey resultType="String" keyProperty="phonSeq" order="AFTER">
+			SELECT last_insert_id()
+		</selectKey>
+	</insert>
+	
+	<update id="update">
+		update contactphone
+		set
+			phonNumber = #{phonNumber},
+		    phonList = #{phonList},
+			contactAdd_contSeq = #{contactAdd_contSeq},
+		    phonMain = #{phonMain}
+		where
+			phonSeq = #{phonSeq}
+	</update>
 </mapper>

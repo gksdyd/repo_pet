@@ -14,4 +14,16 @@ public class MailService {
 	public List<MailDto> selectList() {
 		return mailDao.selectList();
 	}
+	
+	public MailDto selectOne(MailDto mailDto) {
+		return mailDao.selectOne(mailDto);
+	}
+	
+	public int insert(MailDto mailDto) {
+		return mailDao.insert(mailDto);
+	}
+	
+	public int update(MailDto mailDto) {
+		return mailDao.update(mailDto);
+	}
 }

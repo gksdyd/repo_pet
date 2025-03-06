@@ -4,7 +4,9 @@ public class MessDto {
 
 	private String messSeq;
 	private String messList;
+	private String messAddress;
 	private int messMain;
+	private int contactAdd_contSeq;
 	
 	public String getMessSeq() {
 		return messSeq;
@@ -23,5 +25,17 @@ public class MessDto {
 	}
 	public void setMessMain(int messMain) {
 		this.messMain = messMain;
+	}
+	public int getContactAdd_contSeq() {
+		return contactAdd_contSeq;
+	}
+	public void setContactAdd_contSeq(int contactAdd_contSeq) {
+		this.contactAdd_contSeq = contactAdd_contSeq;
+	}
+	public String getMessAddress() {
+		return messAddress;
+	}
+	public void setMessAddress(String messAddress) {
+		this.messAddress = messAddress;
 	}
 }

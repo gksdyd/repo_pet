@@ -6,8 +6,8 @@ public class AnniDto {
 	private Integer anniCalendar;
 	private String anniList;
 	private String anniDate;
-	private Integer anniMain;
 	private String contactAdd_contSeq;
+	private Integer anniMain;
 	
 	public String getAnniSeq() {
 		return anniSeq;
@@ -33,16 +33,16 @@ public class AnniDto {
 	public void setAnniDate(String anniDate) {
 		this.anniDate = anniDate;
 	}
-	public Integer getAnniMain() {
-		return anniMain;
-	}
-	public void setAnniMain(Integer anniMain) {
-		this.anniMain = anniMain;
-	}
 	public String getContactAdd_contSeq() {
 		return contactAdd_contSeq;
 	}
 	public void setContactAdd_contSeq(String contactAdd_contSeq) {
 		this.contactAdd_contSeq = contactAdd_contSeq;
+	}
+	public Integer getAnniMain() {
+		return anniMain;
+	}
+	public void setAnniMain(Integer anniMain) {
+		this.anniMain = anniMain;
 	}
 }

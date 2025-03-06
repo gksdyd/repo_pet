@@ -7,6 +7,7 @@ public class CompDto {
 	private String compDepartment;
 	private String compPosition;
 	private int compMain;
+	private String contactAdd_contSeq;
 	
 	public String getCompSeq() {
 		return compSeq;
@@ -37,5 +38,11 @@ public class CompDto {
 	}
 	public void setCompMain(int compMain) {
 		this.compMain = compMain;
+	}
+	public String getContactAdd_contSeq() {
+		return contactAdd_contSeq;
+	}
+	public void setContactAdd_contSeq(String contactAdd_contSeq) {
+		this.contactAdd_contSeq = contactAdd_contSeq;
 	}
 }

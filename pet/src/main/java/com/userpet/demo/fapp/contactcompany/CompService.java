@@ -14,4 +14,16 @@ public class CompService {
 	public List<CompDto> selectList() {
 		return compDao.selectList();
 	}
+	
+	public CompDto selectOne(CompDto compDto) {
+		return compDao.selectOne(compDto);
+	}
+	
+	public int insert(CompDto compDto) {
+		return compDao.insert(compDto);
+	}
+	
+	public int update(CompDto compDto) {
+		return compDao.update(compDto);
+	}
 }

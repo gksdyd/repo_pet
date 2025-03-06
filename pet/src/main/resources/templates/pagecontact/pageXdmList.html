@@ -12,7 +12,8 @@
   </tr>
   <tr th:each="page : ${page}">
     <td th:text="${page.pageSeq}"></td>
-    <td th:text="${page.pageAddress}"></td>
+    <td><a th:href="@{/pagecontact/pageXdmView(pageSeq=${page.pageSeq})}" th:text="${page.pageAddress}"></a></td>
     <td th:text="${page.pageMain}"></td>
   </tr>
 </table>
+<a href="/pagecontact/pageXdmForm">등록</a>

@@ -12,7 +12,8 @@
   </tr>
   <tr th:each="mail : ${mail}">
     <td th:text="${mail.mailSeq}"></td>
-    <td th:text="${mail.mailAddr}"></td>
+    <td><a th:href="@{/mailcontact/mailXdmView(mailSeq=${mail.mailSeq})}" th:text="${mail.mailAddr}"></a></td>
     <td th:text="${mail.mailMain}"></td>
   </tr>
 </table>
+<a href="/mailcontact/mailXdmForm">등록</a>

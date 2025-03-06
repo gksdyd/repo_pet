@@ -14,4 +14,42 @@
 		where 1=1
 		order by mailSeq
 	</select>
+	
+	<select id="selectOne" resultMap="resultMapObj">
+		select
+			mailSeq,
+			mailAddr,
+			mailMain,
+			contactAdd_contSeq
+		from
+			contactemail
+		where 1=1
+			and mailSeq = #{mailSeq}
+		order by mailSeq
+	</select>
+	
+	<insert id="insert">
+		insert into contactemail(
+			mailAddr,
+			contactAdd_contSeq,
+		    mailMain
+		) values (
+			#{mailAddr},
+			#{contactAdd_contSeq},
+			#{mailMain}
+		)
+		<selectKey resultType="String" keyProperty="mailSeq" order="AFTER">
+			SELECT last_insert_id();
+		</selectKey>
+	</insert>
+	
+	<update id="update">
+		update contactemail
+		set
+			mailAddr = #{mailAddr},
+			contactAdd_contSeq = #{contactAdd_contSeq},
+		    mailMain = #{mailMain}
+		where
+			mailSeq = #{mailSeq}
+	</update>
 </mapper>

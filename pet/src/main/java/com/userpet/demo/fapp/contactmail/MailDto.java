@@ -5,6 +5,7 @@ public class MailDto {
 	private String mailSeq;
 	private String mailAddr;
 	private int mailMain;
+	private String contactAdd_contSeq;
 	
 	public String getMailSeq() {
 		return mailSeq;
@@ -23,5 +24,11 @@ public class MailDto {
 	}
 	public void setMailMain(int mailMain) {
 		this.mailMain = mailMain;
+	}
+	public String getContactAdd_contSeq() {
+		return contactAdd_contSeq;
+	}
+	public void setContactAdd_contSeq(String contactAdd_contSeq) {
+		this.contactAdd_contSeq = contactAdd_contSeq;
 	}
 }

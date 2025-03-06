@@ -11,9 +11,38 @@ public class PhonController {
 	@Autowired
 	PhonService phonService;
 	
-	@RequestMapping(value = "/addcontact/phonXdmList")
+	@RequestMapping(value = "/phoncontact/phonXdmList")
 	public String codeGroupXdmList(Model model) {
 		model.addAttribute("phon", phonService.selectList());
-		return "addcontact/phonXdmList";
+		return "phoncontact/phonXdmList";
+	}
+	
+	@RequestMapping(value = "/phoncontact/phonXdmView")
+	public String codeGroupXdmView(Model model, PhonDto phonDto) {
+		model.addAttribute("item", phonService.selectOne(phonDto));
+		return "phoncontact/phonXdmView";
+	}
+	
+	@RequestMapping(value = "/phoncontact/phonXdmForm")
+	public String codeGroupXdmForm() {
+		return "phoncontact/phonXdmForm";
+	}
+	
+	@RequestMapping(value = "/phoncontact/phonXdmInst")
+	public String codeGroupXdmInst(PhonDto phonDto) {
+		phonService.insert(phonDto);
+		return "redirect:/phoncontact/phonXdmList";
+	}
+	
+	@RequestMapping(value = "/phoncontact/phonXdmMfom")
+	public String codeGroupXdmMfom(Model model, PhonDto phonDto) {
+		model.addAttribute("item", phonService.selectOne(phonDto));
+		return "phoncontact/phonXdmMfom";
+	}
+	
+	@RequestMapping(value = "/phoncontact/phonXdmUpdate")
+	public String codeGroupXdmUpdate(PhonDto phonDto) {
+		phonService.update(phonDto);
+		return "redirect:/phoncontact/phonXdmList";
 	}
 }

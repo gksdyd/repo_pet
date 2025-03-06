@@ -7,21 +7,23 @@
 <table>
   <tr>
     <td>contSeq</td>
-    <td>contFirstName</td>
-    <td>contLastName</td>
+    <td>contName</td>
   </tr>
   <tr th:each="list : ${list}">
     <td th:text="${list.contSeq}"></td>
-    <td th:text="${list.contFirstName}"></td>
-    <td th:text="${list.contLastName}"></td>
+    <td><a th:href="@{/addcontact/addXdmView(contSeq=${list.contSeq})}" th:text="${list.contFirstName} + ${list.contLastName}"></a></td>
   </tr>
 </table>
 
-<a href="/addcontact/addrXdmList">address</a><br>
-<a href="/addcontact/anniXdmList">anniversary</a><br>
-<a href="/addcontact/compXdmList">company</a><br>
-<a href="/addcontact/mailXdmList">email</a><br>
-<a href="/addcontact/messXdmList">messenger</a><br>
-<a href="/addcontact/pageXdmList">page</a><br>
-<a href="/addcontact/phonXdmList">phone</a><br>
-<a href="/addcontact/grouXdmList">group</a><br>
+<br>
+<a href="/addcontact/addXdmForm">등록</a><br>
+
+<br>
+<a href="/addrcontact/addrXdmList">address</a><br>
+<a href="/annicontact/anniXdmList">anniversary</a><br>
+<a href="/compcontact/compXdmList">company</a><br>
+<a href="/mailcontact/mailXdmList">email</a><br>
+<a href="/messcontact/messXdmList">messenger</a><br>
+<a href="/pagecontact/pageXdmList">page</a><br>
+<a href="/phoncontact/phonXdmList">phone</a><br>
+<a href="/groucontact/grouXdmList">group</a><br>

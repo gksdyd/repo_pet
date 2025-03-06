@@ -8,4 +8,7 @@ import org.springframework.stereotype.Repository;
 public interface CompDao {
 
 	public List<CompDto> selectList();
+	public CompDto selectOne(CompDto compDto);
+	public int insert(CompDto compDto);
+	public int update(CompDto compDto);
 }

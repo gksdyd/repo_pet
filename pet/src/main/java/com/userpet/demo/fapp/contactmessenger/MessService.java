@@ -14,4 +14,16 @@ public class MessService {
 	public List<MessDto> selectList() {
 		return messDao.selectList();
 	}
+	
+	public MessDto selectOne(MessDto messDto) {
+		return messDao.selectOne(messDto);
+	}
+	
+	public int insert(MessDto messDto) {
+		return messDao.insert(messDto);
+	}
+	
+	public int update(MessDto messDto) {
+		return messDao.update(messDto);
+	}
 }

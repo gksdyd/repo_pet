@@ -13,8 +13,10 @@
   </tr>
   <tr th:each="addr : ${addr}">
     <td th:text="${addr.addrSeq}"></td>
-    <td th:text="${addr.addrList}"></td>
+    <td><a th:href="@{/addrcontact/addrXdmView(addrSeq=${addr.addrSeq})}" th:text="${addr.addrList}"></a></td>
     <td th:text="${addr.addrZipCode}"></td>
     <td th:text="${addr.addrAddress}"></td>
   </tr>
 </table>
+
+<a href="/addrcontact/addrXdmForm">등록</a>

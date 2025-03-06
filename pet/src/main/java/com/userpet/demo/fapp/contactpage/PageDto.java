@@ -5,6 +5,7 @@ public class PageDto {
 	private String pageSeq;
 	private String pageAddress;
 	private int pageMain;
+	private String contactAdd_contSeq;
 	
 	public String getPageSeq() {
 		return pageSeq;
@@ -23,5 +24,11 @@ public class PageDto {
 	}
 	public void setPageMain(int pageMain) {
 		this.pageMain = pageMain;
+	}
+	public String getContactAdd_contSeq() {
+		return contactAdd_contSeq;
+	}
+	public void setContactAdd_contSeq(String contactAdd_contSeq) {
+		this.contactAdd_contSeq = contactAdd_contSeq;
 	}
 }

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+
+<table>
+  <tr>
+    <td>anniSeq</td>
+    <td>anniCalendar</td>
+    <td>anniList</td>
+    <td>anniDate</td>
+  </tr>
+  <tr>
+    <td th:text="${item.anniSeq}"></td>
+    <td th:text="${item.anniCalendar}"></td>
+    <td th:text="${item.anniList}"></td>
+    <td th:text="${item.anniDate}"></td>
+  </tr>
+</table>
+<a href="/annicontact/anniXdmList">목록</a>
+<a href="">삭제</a>
+<a th:href="@{/annicontact/anniXdmMfom(anniSeq=${item.anniSeq})}">수정</a>

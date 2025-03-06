@@ -11,6 +11,7 @@
   </tr>
   <tr th:each="grou : ${grou}">
     <td th:text="${grou.grouSeq}"></td>
-    <td th:text="${grou.grouName}"></td>
+    <td><a th:href="@{/groucontact/grouXdmView(grouSeq=${grou.grouSeq})}" th:text="${grou.grouName}"></a></td>
   </tr>
 </table>
+<a href="/groucontact/grouXdmForm">등록</a>

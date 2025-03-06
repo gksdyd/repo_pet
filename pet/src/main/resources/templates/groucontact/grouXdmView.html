@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+
+<table>
+  <tr>
+    <td>grouSeq</td>
+    <td>grouName</td>
+  </tr>
+  <tr>
+    <td th:text="${item.grouSeq}"></td>
+    <td th:text="${item.grouName}"></td>
+  </tr>
+</table>
+<a href="/groucontact/grouXdmList">목록</a>
+<a href="">삭제</a>
+<a th:href="@{/groucontact/grouXdmMfom(grouSeq=${item.grouSeq})}">수정</a>

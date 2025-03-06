@@ -13,4 +13,34 @@
 		where 1=1
 		order by grouSeq
 	</select>
+	
+	<select id="selectOne" resultMap="resultMapObj">
+		select
+			grouSeq,
+			grouName
+		from
+			groupname
+		where 1=1
+			and grouSeq = #{grouSeq}
+		order by grouSeq
+	</select>
+	
+	<insert id="insert">
+		insert into groupname(
+		    grouName
+		) values (
+			#{grouName}
+		)
+		<selectKey resultType="String" keyProperty="grouSeq" order="AFTER">
+			SELECT last_insert_id()
+		</selectKey>
+	</insert>
+	
+	<update id="update">
+		update groupname
+		set
+			grouName = #{grouName}
+		where
+			grouSeq = #{grouSeq}
+	</update>
 </mapper>

@@ -11,9 +11,38 @@ public class MailController {
 	@Autowired
 	MailService mailService;
 	
-	@RequestMapping(value = "/addcontact/mailXdmList")
+	@RequestMapping(value = "/mailcontact/mailXdmList")
 	public String codeGroupXdmList(Model model) {
 		model.addAttribute("mail", mailService.selectList());
-		return "addcontact/mailXdmList";
+		return "mailcontact/mailXdmList";
+	}
+	
+	@RequestMapping(value = "/mailcontact/mailXdmView")
+	public String codeGroupXdmView(Model model, MailDto mailDto) {
+		model.addAttribute("item", mailService.selectOne(mailDto));
+		return "mailcontact/mailXdmView";
+	}
+	
+	@RequestMapping(value = "/mailcontact/mailXdmForm")
+	public String codeGroupXdmForm() {
+		return "mailcontact/mailXdmForm";
+	}
+	
+	@RequestMapping(value = "/mailcontact/mailXdmInst")
+	public String codeGroupXdmInst(MailDto mailDto) {
+		mailService.insert(mailDto);
+		return "redirect:/mailcontact/mailXdmList";
+	}
+	
+	@RequestMapping(value = "/mailcontact/mailXdmMfom")
+	public String codeGroupXdmMfom(Model model, MailDto mailDto) {
+		model.addAttribute("item", mailService.selectOne(mailDto));
+		return "mailcontact/mailXdmMfom";
+	}
+	
+	@RequestMapping(value = "/mailcontact/mailXdmUpdate")
+	public String codeGroupXdmUpdate(MailDto mailDto) {
+		mailService.update(mailDto);
+		return "redirect:/mailcontact/mailXdmList";
 	}
 }

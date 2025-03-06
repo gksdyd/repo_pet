@@ -14,4 +14,16 @@ public class PageService {
 	public List<PageDto> selectList() {
 		return pageDao.selectList();
 	}
+	
+	public PageDto selectOne(PageDto pageDto) {
+		return pageDao.selectOne(pageDto);
+	}
+	
+	public int insert(PageDto pageDto) {
+		return pageDao.insert(pageDto);
+	}
+	
+	public int update(PageDto pageDto) {
+		return pageDao.update(pageDto);
+	}
 }

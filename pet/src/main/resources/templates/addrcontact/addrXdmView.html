@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+
+<table>
+  <tr>
+    <td>addrSeq</td>
+    <td>addrList</td>
+    <td>addrZipCode</td>
+    <td>addrAddress</td>
+  </tr>
+  <tr>
+    <td th:text="${item.addrSeq}"></td>
+    <td th:text="${item.addrList}"></td>
+    <td th:text="${item.addrZipCode}"></td>
+    <td th:text="${item.addrAddress}"></td>
+  </tr>
+</table>
+<a href="/addrcontact/addrXdmList">목록</a>
+<a href="">삭제</a>
+<a th:href="@{/addrcontact/addrXdmMfom(addrSeq=${item.addrSeq})}">수정</a>

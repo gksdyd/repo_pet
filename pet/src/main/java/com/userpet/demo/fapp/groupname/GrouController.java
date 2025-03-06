@@ -11,9 +11,38 @@ public class GrouController {
 	@Autowired
 	GrouService grouService;
 	
-	@RequestMapping(value = "/addcontact/grouXdmList")
+	@RequestMapping(value = "/groucontact/grouXdmList")
 	public String codeGroupXdmList(Model model) {
 		model.addAttribute("grou", grouService.selectList());
-		return "addcontact/grouXdmList";
+		return "groucontact/grouXdmList";
+	}
+	
+	@RequestMapping(value = "/groucontact/grouXdmView")
+	public String codeGroupXdmView(Model model, GrouDto grouDto) {
+		model.addAttribute("item", grouService.selectOne(grouDto));
+		return "groucontact/grouXdmView";
+	}
+	
+	@RequestMapping(value = "/groucontact/grouXdmForm")
+	public String codeGroupXdmForm() {
+		return "groucontact/grouXdmForm";
+	}
+	
+	@RequestMapping(value = "/groucontact/grouXdmInst")
+	public String codeGroupXdmInst(GrouDto grouDto) {
+		grouService.insert(grouDto);
+		return "redirect:/groucontact/grouXdmList";
+	}
+	
+	@RequestMapping(value = "/groucontact/grouXdmMfom")
+	public String codeGroupXdmMfom(Model model, GrouDto grouDto) {
+		model.addAttribute("item", grouService.selectOne(grouDto));
+		return "groucontact/grouXdmMfom";
+	}
+	
+	@RequestMapping(value = "/groucontact/grouXdmUpdate")
+	public String codeGroupXdmUpdate(GrouDto grouDto) {
+		grouService.update(grouDto);
+		return "redirect:/groucontact/grouXdmList";
 	}
 }

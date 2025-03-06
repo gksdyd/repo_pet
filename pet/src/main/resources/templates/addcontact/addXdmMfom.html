@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+
+<form action="/addcontact/addXdmUpdate" method="post" id="form">
+	<input type="hidden" name="contSeq" th:value=${item?.contSeq} />
+	seq: <input type="text" name="contSeq" id="contSeq" maxlength="10" disabled th:value=${item?.contSeq} />
+	First name: <input type="text" name="contFirstName" id="contFirstName" placeholder="성" th:value=${item?.contFirstName} />
+	Last name: <input type="text" name="contLastName" id="contLastName" placeholder="이름" th:value=${item?.contLastName} />
+	<button type="button" id="btnSave">저장</button>
+</form>
+
+<!-- <br>
+<a href="/addcontact/addXdmForm">등록</a> -->
+
+<script type="text/javascript">
+	document.getElementById("btnSave").onclick = function () {
+		document.getElementById("form").submit();
+	}
+	
+	document.getElementById("contFirstName").onchange = function () {
+		alert("fname");
+	}
+</script>
+
+</body>
