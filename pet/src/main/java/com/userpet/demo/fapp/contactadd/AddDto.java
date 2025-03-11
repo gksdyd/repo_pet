@@ -13,6 +13,7 @@ public class AddDto {
 	private String contMemo;
 	private String contImage;
 	private Integer contImportant;
+	private Integer deleNy;
 	
 //	getter/setter
 	public String getContSeq() {
@@ -81,5 +82,10 @@ public class AddDto {
 	public void setContImportant(Integer contImportant) {
 		this.contImportant = contImportant;
 	}
-	
+	public Integer getDeleNy() {
+		return deleNy;
+	}
+	public void setDeleNy(Integer deleNy) {
+		this.deleNy = deleNy;
+	}
 }

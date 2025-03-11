@@ -26,4 +26,12 @@ public class PageService {
 	public int update(PageDto pageDto) {
 		return pageDao.update(pageDto);
 	}
+	
+	public int delete(PageDto pageDto) {
+		return pageDao.delete(pageDto);
+	}
+	
+	public int deleNy(PageDto pageDto) {
+		return pageDao.deleNy(pageDto);
+	}
 }

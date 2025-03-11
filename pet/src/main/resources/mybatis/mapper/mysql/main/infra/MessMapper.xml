@@ -20,7 +20,8 @@
 			messSeq,
 			messList,
 			messMain,
-			contactAdd_contSeq
+			contactAdd_contSeq,
+			deleNy
 		from
 			contactmessenger
 		where 1=1
@@ -33,12 +34,14 @@
 			messList,
 		    messAddress,
 			contactAdd_contSeq,
-		    messMain
+		    messMain,
+		    deleNy
 		) values (
 			#{messList},
 			#{messAddress},
 			#{contactAdd_contSeq},
-			#{messMain}
+			#{messMain},
+			0
 		)
 		<selectKey resultType="String" keyProperty="messSeq" order="AFTER">
 			SELECT last_insert_id()
@@ -52,6 +55,20 @@
 		    messAddress = #{messAddress},
 			contactAdd_contSeq = #{contactAdd_contSeq},
 		    messMain = #{messMain}
+		where
+			messSeq = #{messSeq}
+	</update>
+	
+	<delete id="delete">
+		delete from contactmessenger
+		where
+			messSeq = #{messSeq}
+	</delete>
+	
+	<update id="deleNy">
+		update contactmessenger
+		set
+			deleNy = 1
 		where
 			messSeq = #{messSeq}
 	</update>

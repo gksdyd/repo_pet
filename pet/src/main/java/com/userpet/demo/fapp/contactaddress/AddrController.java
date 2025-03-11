@@ -46,4 +46,16 @@ public class AddrController {
 		addrService.update(addrDto);
 		return "redirect:/addrcontact/addrXdmList";
 	}
+	
+	@RequestMapping(value="/addrcontact/addrXdmDelete")
+	public String codeGroupXdmDelete(AddrDto addrDto) {
+		addrService.delete(addrDto);
+		return "redirect:/addrcontact/addrXdmList";
+	}
+	
+	@RequestMapping(value="/addrcontact/addrXdmDeleNy")
+	public String codeGroupXdmDeleNy(AddrDto addrDto) {
+		addrService.deleNy(addrDto);
+		return "redirect:/addrcontact/addrXdmList";
+	}
 }

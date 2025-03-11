@@ -20,7 +20,8 @@
 			pageSeq,
 			pageAddress,
 			pageMain,
-			contactAdd_contSeq
+			contactAdd_contSeq,
+			deleNy
 		from
 			contactpage
 		where 1=1
@@ -32,11 +33,13 @@
 		insert into contactpage(
 			pageAddress,
 			contactAdd_contSeq,
-		    pageMain
+		    pageMain,
+		    deleNy
 		) values (
 			#{pageAddress},
 			#{contactAdd_contSeq},
-			#{pageMain}
+			#{pageMain},
+			0
 		)
 		<selectKey resultType="String" keyProperty="pageSeq" order="AFTER">
 			SELECT last_insert_id()
@@ -49,6 +52,20 @@
 			pageAddress = #{pageAddress},
 			contactAdd_contSeq = #{contactAdd_contSeq},
 		    pageMain = #{pageMain}
+		where
+			pageSeq = #{pageSeq}
+	</update>
+	
+	<delete id="delete">
+		delete from contactpage
+		where
+			pageSeq = #{pageSeq}
+	</delete>
+	
+	<update id="deleNy">
+		update contactpage
+		set
+			deleNy = 1
 		where
 			pageSeq = #{pageSeq}
 	</update>

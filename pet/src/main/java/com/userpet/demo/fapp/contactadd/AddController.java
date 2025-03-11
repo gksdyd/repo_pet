@@ -61,4 +61,16 @@ public class AddController {
 		System.out.println(addDto.getContSeq());
 		return "redirect:/addcontact/addXdmList";
 	}
+	
+	@RequestMapping(value="/addcontact/addXdmDelete")
+	public String codeGroupXdmDelete(AddDto addDto) {
+		addService.delete(addDto);
+		return "redirect:/addcontact/addXdmList";
+	}
+	
+	@RequestMapping(value="/addcontact/addXdmDeleNy")
+	public String codeGroupXdmDeleNy(AddDto addDto) {
+		addService.deleNy(addDto);
+		return "redirect:/addcontact/addXdmList";
+	}
 }

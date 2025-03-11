@@ -6,6 +6,7 @@ public class PhonDto {
 	private String phonNumber;
 	private String phonList;
 	private int phonMain;
+	private int deleNy;
 	private String contactAdd_contSeq;
 	
 	public String getPhonSeq() {
@@ -37,5 +38,11 @@ public class PhonDto {
 	}
 	public void setContactAdd_contSeq(String contactAdd_contSeq) {
 		this.contactAdd_contSeq = contactAdd_contSeq;
+	}
+	public int getDeleNy() {
+		return deleNy;
+	}
+	public void setDeleNy(int deleNy) {
+		this.deleNy = deleNy;
 	}
 }

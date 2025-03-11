@@ -36,7 +36,8 @@
 		    contNickname,
 		    contMemo,
 		    contImage,
-		    contImportant
+		    contImportant,
+		    deleNy
 		FROM
 			contactadd
 		WHERE 1=1
@@ -55,7 +56,8 @@
 		    contNickname,
 		    contMemo,
 		    contImage,
-		    contImportant
+		    contImportant,
+		    deleNy
 		) values (
 		    #{contFirstName},
 		    #{contLastName},
@@ -66,7 +68,8 @@
 		    #{contNickname},
 		    #{contMemo},
 		    #{contImage},
-		    #{contImportant}
+		    #{contImportant},
+		    0
 		)
 		<selectKey resultType="String" keyProperty="contSeq" order="AFTER">
 			SELECT last_insert_id()
@@ -88,5 +91,19 @@
 		    contImportant = #{contImportant}
 		where
 			contSeq = #{contSeq}
+	  </update>
+	  
+	  <delete id="delete">
+	  	DELETE FROM contactadd
+		WHERE
+			contSeq = #{contSeq}
+	  </delete>
+	  
+	  <update id="deleNy">
+	  	update contactadd
+	  	set
+	  		deleNy = 1
+	  	where
+	  		contSeq = #{contSeq}
 	  </update>
 </mapper>

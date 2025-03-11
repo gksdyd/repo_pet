@@ -26,4 +26,12 @@ public class MailService {
 	public int update(MailDto mailDto) {
 		return mailDao.update(mailDto);
 	}
+	
+	public int delete(MailDto mailDto) {
+		return mailDao.delete(mailDto);
+	}
+	
+	public int deleNy(MailDto mailDto) {
+		return mailDao.deleNy(mailDto);
+	}
 }

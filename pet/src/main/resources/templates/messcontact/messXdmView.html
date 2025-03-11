@@ -9,13 +9,30 @@
     <td>messSeq</td>
     <td>messList</td>
     <td>messMain</td>
+    <td>deleNy</td>
   </tr>
   <tr>
     <td th:text="${item.messSeq}"></td>
     <td th:text="${item.messList}"></td>
     <td th:text="${item.messMain}"></td>
+    <td th:text="${item.deleNy}"></td>
   </tr>
 </table>
 <a href="/messcontact/messXdmList">목록</a>
-<a href="">삭제</a>
+<a th:href="@{/messcontact/messXdmDelete(messSeq=${item.messSeq})}" id="delete">영구삭제</a>
+<a th:href="@{/messcontact/messXdmDeleNy(messSeq=${item.messSeq})}" id="uelete">삭제</a>
 <a th:href="@{/messcontact/messXdmMfom(messSeq=${item.messSeq})}">수정</a>
+
+<script type="text/javascript">
+	document.getElementById("delete").onclick = function() {
+		if (!confirm("real??")) {
+			return false;
+		}
+	}
+	
+	document.getElementById("uelete").onclick = function() {
+		if (!confirm("real??")) {
+			return false;
+		}
+	}
+</script>

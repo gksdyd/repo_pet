@@ -11,4 +11,6 @@ public interface PhonDao {
 	public PhonDto selectOne(PhonDto phonDto);
 	public int insert(PhonDto phonDto);
 	public int update(PhonDto phonDto);
+	public int delete(PhonDto phonDto);
+	public int deleNy(PhonDto phonDto);
 }

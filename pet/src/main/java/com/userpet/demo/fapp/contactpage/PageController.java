@@ -45,4 +45,15 @@ public class PageController {
 		pageService.update(pageDto);
 		return "redirect:/pagecontact/pageXdmList";
 	}
+	@RequestMapping(value = "/pagecontact/pageXdmDelete")
+	public String codeGroupXdmDelete(PageDto pageDto) {
+		pageService.delete(pageDto);
+		return "redirect:/pagecontact/pageXdmList";
+	}
+	
+	@RequestMapping(value = "/pagecontact/pageXdmDeleNy")
+	public String codeGroupXdmDeleNy(PageDto pageDto) {
+		pageService.deleNy(pageDto);
+		return "redirect:/pagecontact/pageXdmList";
+	}
 }

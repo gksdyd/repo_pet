@@ -7,6 +7,7 @@ public class CompDto {
 	private String compDepartment;
 	private String compPosition;
 	private int compMain;
+	private int deleNy;
 	private String contactAdd_contSeq;
 	
 	public String getCompSeq() {
@@ -44,5 +45,11 @@ public class CompDto {
 	}
 	public void setContactAdd_contSeq(String contactAdd_contSeq) {
 		this.contactAdd_contSeq = contactAdd_contSeq;
+	}
+	public int getDeleNy() {
+		return deleNy;
+	}
+	public void setDeleNy(int deleNy) {
+		this.deleNy = deleNy;
 	}
 }

@@ -5,6 +5,7 @@ public class PageDto {
 	private String pageSeq;
 	private String pageAddress;
 	private int pageMain;
+	private int deleNy;
 	private String contactAdd_contSeq;
 	
 	public String getPageSeq() {
@@ -30,5 +31,11 @@ public class PageDto {
 	}
 	public void setContactAdd_contSeq(String contactAdd_contSeq) {
 		this.contactAdd_contSeq = contactAdd_contSeq;
+	}
+	public int getDeleNy() {
+		return deleNy;
+	}
+	public void setDeleNy(int deleNy) {
+		this.deleNy = deleNy;
 	}
 }

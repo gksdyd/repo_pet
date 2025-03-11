@@ -6,6 +6,7 @@ public class MessDto {
 	private String messList;
 	private String messAddress;
 	private int messMain;
+	private int deleNy;
 	private int contactAdd_contSeq;
 	
 	public String getMessSeq() {
@@ -37,5 +38,11 @@ public class MessDto {
 	}
 	public void setMessAddress(String messAddress) {
 		this.messAddress = messAddress;
+	}
+	public int getDeleNy() {
+		return deleNy;
+	}
+	public void setDeleNy(int deleNy) {
+		this.deleNy = deleNy;
 	}
 }

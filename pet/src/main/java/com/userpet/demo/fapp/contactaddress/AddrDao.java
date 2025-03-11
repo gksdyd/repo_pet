@@ -11,4 +11,6 @@ public interface AddrDao {
 	public AddrDto selectOne(AddrDto addrDto);
 	public int insert(AddrDto addrDto);
 	public int update(AddrDto addrDto);
+	public int delete(AddrDto addrDto);
+	public int deleNy(AddrDto addrDto);
 }

@@ -38,4 +38,12 @@ public class AddService {
 	public int update(AddDto addDto) {
 		return addDao.update(addDto);
 	}
+	
+	public int delete(AddDto addDto) {
+		return addDao.delete(addDto);
+	}
+	
+	public int deleNy(AddDto addDto) {
+		return addDao.deleNy(addDto);
+	}
 }

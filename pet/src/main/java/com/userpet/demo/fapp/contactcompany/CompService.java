@@ -26,4 +26,12 @@ public class CompService {
 	public int update(CompDto compDto) {
 		return compDao.update(compDto);
 	}
+	
+	public int delete(CompDto compDto) {
+		return compDao.delete(compDto);
+	}
+	
+	public int deleNy(CompDto compDto) {
+		return compDao.deleNy(compDto);
+	}
 }

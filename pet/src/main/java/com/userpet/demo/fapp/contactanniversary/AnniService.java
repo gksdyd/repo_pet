@@ -38,4 +38,12 @@ public class AnniService {
 	public int update(AnniDto anniDto) {
 		return anniDao.update(anniDto);
 	}
+	
+	public int delete(AnniDto anniDto) {
+		return anniDao.delete(anniDto);
+	}
+	
+	public int deleNy(AnniDto anniDto) {
+		return anniDao.deleNy(anniDto);
+	}
 }

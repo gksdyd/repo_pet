@@ -8,6 +8,7 @@ public class AddrDto {
 	private String addrAddress;
 	private String contactAdd_contSeq;
 	private Integer addrMain;
+	private Integer deleNy;
 	
 	public String getAddrSeq() {
 		return addrSeq;
@@ -44,5 +45,11 @@ public class AddrDto {
 	}
 	public void setAddrMain(Integer addrMain) {
 		this.addrMain = addrMain;
+	}
+	public Integer getDeleNy() {
+		return deleNy;
+	}
+	public void setDeleNy(Integer deleNy) {
+		this.deleNy = deleNy;
 	}
 }

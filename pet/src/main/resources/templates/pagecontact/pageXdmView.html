@@ -9,13 +9,30 @@
     <td>pageSeq</td>
     <td>pageAddress</td>
     <td>pageMain</td>
+    <td>deleNy</td>
   </tr>
   <tr>
     <td th:text="${item.pageSeq}"></td>
     <td th:text="${item.pageAddress}"></td>
     <td th:text="${item.pageMain}"></td>
+    <td th:text="${item.deleNy}"></td>
   </tr>
 </table>
 <a href="/pagecontact/pageXdmList">목록</a>
-<a href="">삭제</a>
+<a th:href="@{/pagecontact/pageXdmDelete(pageSeq=${item.pageSeq})}" id="delete">영구삭제</a>
+<a th:href="@{/pagecontact/pageXdmDeleNy(pageSeq=${item.pageSeq})}" id="uelete">삭제</a>
 <a th:href="@{/pagecontact/pageXdmMfom(pageSeq=${item.pageSeq})}">수정</a>
+
+<script type="text/javascript">
+	document.getElementById("delete").onclick = function() {
+		if (!confirm("real??")) {
+			return false;
+		}
+	}
+	
+	document.getElementById("uelete").onclick = function() {
+		if (!confirm("real??")) {
+			return false;
+		}
+	}
+</script>

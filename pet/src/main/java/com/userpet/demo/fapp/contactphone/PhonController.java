@@ -45,4 +45,16 @@ public class PhonController {
 		phonService.update(phonDto);
 		return "redirect:/phoncontact/phonXdmList";
 	}
+	
+	@RequestMapping(value = "/phoncontact/phonXdmDelete")
+	public String codeGroupXdmDelete(PhonDto phonDto) {
+		phonService.delete(phonDto);
+		return "redirect:/phoncontact/phonXdmList";
+	}
+	
+	@RequestMapping(value = "/phoncontact/phonXdmDeleNy")
+	public String codeGroupXdmDeleNy(PhonDto phonDto) {
+		phonService.deleNy(phonDto);
+		return "redirect:/phoncontact/phonXdmList";
+	}
 }

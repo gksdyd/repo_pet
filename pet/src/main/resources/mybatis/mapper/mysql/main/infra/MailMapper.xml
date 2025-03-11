@@ -20,7 +20,8 @@
 			mailSeq,
 			mailAddr,
 			mailMain,
-			contactAdd_contSeq
+			contactAdd_contSeq,
+			deleNy
 		from
 			contactemail
 		where 1=1
@@ -32,11 +33,13 @@
 		insert into contactemail(
 			mailAddr,
 			contactAdd_contSeq,
-		    mailMain
+		    mailMain,
+		    deleNy
 		) values (
 			#{mailAddr},
 			#{contactAdd_contSeq},
-			#{mailMain}
+			#{mailMain},
+			0
 		)
 		<selectKey resultType="String" keyProperty="mailSeq" order="AFTER">
 			SELECT last_insert_id();
@@ -49,6 +52,20 @@
 			mailAddr = #{mailAddr},
 			contactAdd_contSeq = #{contactAdd_contSeq},
 		    mailMain = #{mailMain}
+		where
+			mailSeq = #{mailSeq}
+	</update>
+	
+	<delete id="delete">
+		delete from contactemail
+		where
+			mailSeq = #{mailSeq}
+	</delete>
+	
+	<update id="deleNy">
+		update contactemail
+		set
+			deleNy = 1
 		where
 			mailSeq = #{mailSeq}
 	</update>

@@ -45,4 +45,16 @@ public class MailController {
 		mailService.update(mailDto);
 		return "redirect:/mailcontact/mailXdmList";
 	}
+	
+	@RequestMapping(value = "/mailcontact/mailXdmDelete")
+	public String codeGroupXdmDelete(MailDto mailDto) {
+		mailService.delete(mailDto);
+		return "redirect:/mailcontact/mailXdmList";
+	}
+	
+	@RequestMapping(value = "/mailcontact/mailXdmDeleNy")
+	public String codeGroupXdmDeleNy(MailDto mailDto) {
+		mailService.deleNy(mailDto);
+		return "redirect:/mailcontact/mailXdmList";
+	}
 }

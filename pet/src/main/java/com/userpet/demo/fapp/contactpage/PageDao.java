@@ -11,4 +11,6 @@ public interface PageDao {
 	public PageDto selectOne(PageDto pageDto);
 	public int insert(PageDto pageDto);
 	public int update(PageDto pageDto);
+	public int delete(PageDto pageDto);
+	public int deleNy(PageDto pageDto);
 }

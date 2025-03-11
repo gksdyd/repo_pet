@@ -10,14 +10,31 @@
     <td>phonNumber</td>
     <td>phonList</td>
     <td>phonMain</td>
+    <td>deleNy</td>
   </tr>
   <tr>
     <td th:text="${item.phonSeq}"></td>
     <td th:text="${item.phonNumber}"></td>
     <td th:text="${item.phonList}"></td>
     <td th:text="${item.phonMain}"></td>
+    <td th:text="${item.deleNy}"></td>
   </tr>
 </table>
 <a href="/phoncontact/phonXdmList">목록</a>
-<a href="">삭제</a>
+<a th:href="@{/phoncontact/phonXdmDelete(phonSeq=(${item.phonSeq}))}" id="delete">영구삭제</a>
+<a th:href="@{/phoncontact/phonXdmDeleNy(phonSeq=(${item.phonSeq}))}" id="uelete">삭제</a>
 <a th:href="@{/phoncontact/phonXdmMfom(phonSeq=(${item.phonSeq}))}">수정</a>
+
+<script type="text/javascript">
+	document.getElementById("delete").onclick = function() {
+		if (!confirm("real??")) {
+			return false;
+		}
+	}
+	
+	document.getElementById("uelete").onclick = function() {
+		if (!confirm("real??")) {
+			return false;
+		}
+	}
+</script>

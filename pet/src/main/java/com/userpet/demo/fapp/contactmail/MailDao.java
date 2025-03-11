@@ -11,4 +11,6 @@ public interface MailDao {
 	public MailDto selectOne(MailDto mailDto);
 	public int insert(MailDto mailDto);
 	public int update(MailDto mailDto);
+	public int delete(MailDto mailDto);
+	public int deleNy(MailDto mailDto);
 }

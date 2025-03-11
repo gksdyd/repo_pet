@@ -13,4 +13,6 @@ public interface AnniDao {
 	public AnniDto selectOne(AnniDto anniDto);
 	public int insert(AnniDto anniDto);
 	public int update(AnniDto anniDto);
+	public int delete(AnniDto anniDto);
+	public int deleNy(AnniDto anniDto);
 }

@@ -11,4 +11,6 @@ public interface MessDao {
 	public MessDto selectOne(MessDto messDto);
 	public int insert(MessDto messDto);
 	public int update(MessDto messDto);
+	public int delete(MessDto messDto);
+	public int deleNy(MessDto messDto);
 }

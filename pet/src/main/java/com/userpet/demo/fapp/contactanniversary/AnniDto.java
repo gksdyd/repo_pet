@@ -8,6 +8,7 @@ public class AnniDto {
 	private String anniDate;
 	private String contactAdd_contSeq;
 	private Integer anniMain;
+	private Integer deleNy;
 	
 	public String getAnniSeq() {
 		return anniSeq;
@@ -44,5 +45,11 @@ public class AnniDto {
 	}
 	public void setAnniMain(Integer anniMain) {
 		this.anniMain = anniMain;
+	}
+	public Integer getDeleNy() {
+		return deleNy;
+	}
+	public void setDeleNy(Integer deleNy) {
+		this.deleNy = deleNy;
 	}
 }

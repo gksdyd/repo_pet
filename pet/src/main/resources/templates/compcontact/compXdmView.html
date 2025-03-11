@@ -12,6 +12,7 @@
     <td>compPosition</td>
     <td>compMain</td>
     <td>contactAdd_contSeq</td>
+    <td>deleNy</td>
   </tr>
   <tr>
     <td th:text="${item.compSeq}"></td>
@@ -20,8 +21,24 @@
     <td th:text="${item.compPosition}"></td>
     <td th:text="${item.compMain}"></td>
     <td th:text="${item.contactAdd_contSeq}"></td>
+    <td th:text="${item.deleNy}"></td>
   </tr>
 </table>
 <a href="/compcontact/compXdmList">목록</a>
-<a href="">삭제</a>
+<a th:href="@{/compcontact/compXdmDelete(compSeq=${item.compSeq})}" id="delete">영구삭제</a>
+<a th:href="@{/compcontact/compXdmDeleNy(compSeq=${item.compSeq})}" id="uelete">삭제</a>
 <a th:href="@{/compcontact/compXdmMfom(compSeq=${item.compSeq})}">수정</a>
+
+<script type="text/javascript">
+	document.getElementById("delete").onclick = function() {
+		if (!confirm("real??")) {
+			return false;
+		}
+	}
+	
+	document.getElementById("uelete").onclick = function() {
+		if (!confirm("real??")) {
+			return false;
+		}
+	}
+</script>

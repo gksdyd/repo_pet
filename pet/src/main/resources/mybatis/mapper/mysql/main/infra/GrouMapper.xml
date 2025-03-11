@@ -17,7 +17,8 @@
 	<select id="selectOne" resultMap="resultMapObj">
 		select
 			grouSeq,
-			grouName
+			grouName,
+			deleNy
 		from
 			groupname
 		where 1=1
@@ -27,9 +28,11 @@
 	
 	<insert id="insert">
 		insert into groupname(
-		    grouName
+		    grouName,
+		    deleNy
 		) values (
-			#{grouName}
+			#{grouName},
+			0
 		)
 		<selectKey resultType="String" keyProperty="grouSeq" order="AFTER">
 			SELECT last_insert_id()
@@ -40,6 +43,20 @@
 		update groupname
 		set
 			grouName = #{grouName}
+		where
+			grouSeq = #{grouSeq}
+	</update>
+	
+	<delete id="delete">
+		delete from groupname
+		where
+			grouSeq = #{grouSeq}
+	</delete>
+	
+	<update id="deleNy">
+		update groupname
+		set
+			deleNy = 1
 		where
 			grouSeq = #{grouSeq}
 	</update>

@@ -26,4 +26,12 @@ public class GrouService {
 	public int update(GrouDto grouDto) {
 		return grouDao.update(grouDto);
 	}
+	
+	public int delete(GrouDto grouDto) {
+		return grouDao.delete(grouDto);
+	}
+	
+	public int deleNy(GrouDto grouDto) {
+		return grouDao.deleNy(grouDto);
+	}
 }

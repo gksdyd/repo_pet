@@ -11,4 +11,6 @@ public interface CompDao {
 	public CompDto selectOne(CompDto compDto);
 	public int insert(CompDto compDto);
 	public int update(CompDto compDto);
+	public int delete(CompDto compDto);
+	public int deleNy(CompDto compDto);
 }

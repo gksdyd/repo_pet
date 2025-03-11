@@ -26,4 +26,12 @@ public class MessService {
 	public int update(MessDto messDto) {
 		return messDao.update(messDto);
 	}
+	
+	public int delete(MessDto messDto) {
+		return messDao.delete(messDto);
+	}
+	
+	public int deleNy(MessDto messDto) {
+		return messDao.deleNy(messDto);
+	}
 }

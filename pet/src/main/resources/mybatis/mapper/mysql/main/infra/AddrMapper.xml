@@ -26,7 +26,8 @@
 		    addrZipCode,
 		    addrAddress,
 		    addrMain,
-		    contactAdd_contSeq
+		    contactAdd_contSeq,
+		    deleNy
 		FROM
 			contactaddress
 		WHERE 1=1
@@ -40,13 +41,15 @@
 		    addrZipCode,
 		    addrAddress,
 		    contactAdd_contSeq,
-		    addrMain
+		    addrMain,
+		    deleNy
 	  	) values (
 	  		#{addrList},
 	  		#{addrZipCode},
 	  		#{addrAddress},
 	  		#{contactAdd_contSeq},
-	  		#{addrMain}
+	  		#{addrMain},
+	  		0
 	  	)
 	  	<selectKey resultType="String" keyProperty="addrSeq" order="AFTER">
 	  		SELECT last_insert_id()
@@ -63,5 +66,19 @@
 		    addrMain = #{addrMain}
 		where
 			addrSeq = #{addrSeq}
+	  </update>
+	  
+	  <delete id="delete">
+	  	delete from contactaddress
+	  	where
+	  		addrSeq = #{addrSeq}
+	  </delete>
+	  
+	  <update id="deleNy">
+	  	update contactaddress
+	  	set
+	  		deleNy = 1
+	  	where
+	  		addrSeq = #{addrSeq}
 	  </update>
 </mapper>

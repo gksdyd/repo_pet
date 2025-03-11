@@ -8,12 +8,29 @@
   <tr>
     <td>grouSeq</td>
     <td>grouName</td>
+    <td>deleNy</td>
   </tr>
   <tr>
     <td th:text="${item.grouSeq}"></td>
     <td th:text="${item.grouName}"></td>
+    <td th:text="${item.deleNy}"></td>
   </tr>
 </table>
 <a href="/groucontact/grouXdmList">목록</a>
-<a href="">삭제</a>
+<a th:href="@{/groucontact/grouXdmDelete(grouSeq=${item.grouSeq})}" id="delete">영구삭제</a>
+<a th:href="@{/groucontact/grouXdmDeleNy(grouSeq=${item.grouSeq})}" id="uelete">삭제</a>
 <a th:href="@{/groucontact/grouXdmMfom(grouSeq=${item.grouSeq})}">수정</a>
+
+<script type="text/javascript">
+	document.getElementById("delete").onclick = function() {
+		if (!confirm("real??")) {
+			return false;
+		}
+	}
+	
+	document.getElementById("uelete").onclick = function() {
+		if (!confirm("real??")) {
+			return false;
+		}
+	}
+</script>

@@ -10,14 +10,31 @@
     <td>addrList</td>
     <td>addrZipCode</td>
     <td>addrAddress</td>
+    <td>deleNy</td>
   </tr>
   <tr>
     <td th:text="${item.addrSeq}"></td>
     <td th:text="${item.addrList}"></td>
     <td th:text="${item.addrZipCode}"></td>
     <td th:text="${item.addrAddress}"></td>
+    <td th:text="${item.deleNy}"></td>
   </tr>
 </table>
 <a href="/addrcontact/addrXdmList">목록</a>
-<a href="">삭제</a>
+<a th:href="@{/addrcontact/addrXdmDelete(addrSeq=${item.addrSeq})}" id="delete">영구삭제</a>
+<a th:href="@{/addrcontact/addrXdmDeleNy(addrSeq=${item.addrSeq})}" id="uelete">삭제</a>
 <a th:href="@{/addrcontact/addrXdmMfom(addrSeq=${item.addrSeq})}">수정</a>
+
+<script type="text/javascript">
+	document.getElementById("delete").onclick = function() {
+		if (!confirm("real??")) {
+			return false;
+		}
+	}
+	
+	document.getElementById("uelete").onclick = function() {
+		if (!confirm("real??")) {
+			return false;
+		}
+	}
+</script>

@@ -10,14 +10,31 @@
     <td>anniCalendar</td>
     <td>anniList</td>
     <td>anniDate</td>
+    <td>deleNy</td>
   </tr>
   <tr>
     <td th:text="${item.anniSeq}"></td>
     <td th:text="${item.anniCalendar}"></td>
     <td th:text="${item.anniList}"></td>
     <td th:text="${item.anniDate}"></td>
+    <td th:text="${item.deleNy}"></td>
   </tr>
 </table>
 <a href="/annicontact/anniXdmList">목록</a>
-<a href="">삭제</a>
+<a th:href="@{/annicontact/anniXdmDeleNy(anniSeq=${item.anniSeq})}" id="uelete">삭제</a>
+<a th:href="@{/annicontact/anniXdmDelete(anniSeq=${item.anniSeq})}" id="delete">영구삭제</a>
 <a th:href="@{/annicontact/anniXdmMfom(anniSeq=${item.anniSeq})}">수정</a>
+
+<script type="text/javascript">
+	document.getElementById("delete").onclick = function() {
+		if (!confirm("real??")) {
+			return false;
+		}
+	}
+	
+	document.getElementById("uelete").onclick = function() {
+		if (!confirm("real??")) {
+			return false;
+		}
+	}
+</script>

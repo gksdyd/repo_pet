@@ -11,4 +11,6 @@ public interface GrouDao {
 	public GrouDto selectOne(GrouDto grouDto);
 	public int insert(GrouDto grouDto);
 	public int update(GrouDto grouDto);
+	public int delete(GrouDto grouDto);
+	public int deleNy(GrouDto grouDto);
 }

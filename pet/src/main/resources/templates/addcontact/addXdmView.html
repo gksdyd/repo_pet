@@ -9,15 +9,31 @@
     <td>contSeq</td>
     <td>contFirstName</td>
     <td>contLastName</td>
+    <td>deleNy</td>
   </tr>
   <tr>
     <td th:text="${item.contSeq}"></td>
     <td th:text="${item.contFirstName}"></td>
     <td th:text="${item.contLastName}"></td>
+    <td th:text="${item.deleNy}"></td>
   </tr>
 </table>
 <br>
 <br>
 <a href="/addcontact/addXdmList">목록</a>
-<a href="">삭제</a>
+<a th:href="@{/addcontact/addXdmDelete(contSeq=${item.contSeq})}" id="delete">영구삭제</a>
+<a th:href="@{/addcontact/addXdmDeleNy(contSeq=${item.contSeq})}" id="uelete">삭제</a>
 <a th:href="@{/addcontact/addXdmMfom(contSeq=${item.contSeq})}">수정</a>
+
+<script type="text/javascript">
+	document.getElementById("delete").onclick = function() {
+		if (!confirm("real???")) {
+			return false;
+		}
+	}
+	document.getElementById("uelete").onclick = function() {
+		if (!confirm("real???")) {
+			return false;
+		}
+	}
+</script>

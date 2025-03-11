@@ -59,4 +59,16 @@ public class AnniController {
 		anniService.update(anniDto);
 		return "redirect:/annicontact/anniXdmList";
 	}
+	
+	@RequestMapping(value="/annicontact/anniXdmDelete")
+	public String codeGroupXdmDelete(AnniDto anniDto) {
+		anniService.delete(anniDto);
+		return "redirect:/annicontact/anniXdmList";
+	}
+	
+	@RequestMapping(value="/annicontact/anniXdmDeleNy")
+	public String codeGroupXdmDeleNy(AnniDto anniDto) {
+		anniService.deleNy(anniDto);
+		return "redirect:/annicontact/anniXdmList";
+	}
 }

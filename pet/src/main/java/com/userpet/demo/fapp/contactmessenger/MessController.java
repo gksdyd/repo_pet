@@ -45,4 +45,15 @@ public class MessController {
 		messService.update(messDto);
 		return "redirect:/messcontact/messXdmList";
 	}
+	
+	@RequestMapping(value = "/messcontact/messXdmDelete")
+	public String codeGroupXdmDelete(MessDto messDto) {
+		messService.delete(messDto);
+		return "redirect:/messcontact/messXdmList";
+	}
+	@RequestMapping(value = "/messcontact/messXdmDeleNy")
+	public String codeGroupXdmDeleNy(MessDto messDto) {
+		messService.deleNy(messDto);
+		return "redirect:/messcontact/messXdmList";
+	}
 }

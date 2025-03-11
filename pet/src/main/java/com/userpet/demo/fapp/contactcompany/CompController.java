@@ -48,4 +48,16 @@ public class CompController {
 		System.out.println(compDto.getContactAdd_contSeq());
 		return "redirect:/compcontact/compXdmList";
 	}
+	
+	@RequestMapping(value="/compcontact/compXdmDelete")
+	public String codeGroupXdmDelete(CompDto compDto) {
+		compService.delete(compDto);
+		return "redirect:/compcontact/compXdmList";
+	}
+	
+	@RequestMapping(value="/compcontact/compXdmDeleNy")
+	public String codeGroupXdmDeleNy(CompDto compDto) {
+		compService.deleNy(compDto);
+		return "redirect:/compcontact/compXdmList";
+	}
 }

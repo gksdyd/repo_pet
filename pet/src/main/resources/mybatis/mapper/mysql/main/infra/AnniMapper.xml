@@ -26,7 +26,8 @@
 		    anniList,
 		    anniDate,
 		    anniMain,
-		    contactAdd_contSeq
+		    contactAdd_contSeq,
+		    deleNy
 		FROM
 			contactanniversary
 		WHERE 1=1
@@ -40,13 +41,15 @@
 		    anniList,
 		    anniDate,
 		    contactAdd_contSeq,
-		    anniMain
+		    anniMain,
+		    deleNy
 	  	) values (
 	  		#{anniCalendar},
 	  		#{anniList},
 	  		#{anniDate},
 	  		#{contactAdd_contSeq},
-	  		#{anniMain}
+	  		#{anniMain},
+	  		0
 	  	)
 	  	<selectKey resultType="String" keyProperty="anniSeq" order="AFTER">
 	  		SELECT last_insert_id()
@@ -63,5 +66,19 @@
 		    anniMain = #{anniMain}
 		where
 			anniSeq = #{anniSeq}
+	  </update>
+	  
+	  <delete id="delete">
+	  	delete from contactanniversary
+	  	where
+	  		anniSeq = #{anniSeq}
+	  </delete>
+	  
+	  <update id="deleNy">
+	  	update contactanniversary
+	  	set
+	  		deleNy = 1
+	  	where
+	  		anniSeq = #{anniSeq}
 	  </update>
 </mapper>

@@ -13,4 +13,6 @@ public interface AddDao {
 	public AddDto selectOne(AddDto addDto);
 	public int insert(AddDto addDto);
 	public int update(AddDto addDto);
+	public int delete(AddDto addDto);
+	public int deleNy(AddDto addDto);
 }

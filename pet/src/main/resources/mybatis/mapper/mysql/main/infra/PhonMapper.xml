@@ -22,7 +22,8 @@
 			phonNumber,
 			phonList,
 			phonMain,
-			contactAdd_contSeq
+			contactAdd_contSeq,
+			deleNy
 		from
 			contactphone
 		where 1=1
@@ -35,12 +36,14 @@
 			phonNumber,
 		    phonList,
 			contactAdd_contSeq,
-		    phonMain
+		    phonMain,
+		    deleNy
 		) values (
 			#{phonNumber},
 			#{phonList},
 			#{contactAdd_contSeq},
-			#{phonMain}
+			#{phonMain},
+			0
 		)
 		<selectKey resultType="String" keyProperty="phonSeq" order="AFTER">
 			SELECT last_insert_id()
@@ -54,6 +57,20 @@
 		    phonList = #{phonList},
 			contactAdd_contSeq = #{contactAdd_contSeq},
 		    phonMain = #{phonMain}
+		where
+			phonSeq = #{phonSeq}
+	</update>
+	
+	<delete id="delete">
+		delete from contactphone
+		where
+			phonSeq = #{phonSeq}
+	</delete>
+	
+	<update id="deleNy">
+		update contactphone
+		set
+			deleNy = 1
 		where
 			phonSeq = #{phonSeq}
 	</update>

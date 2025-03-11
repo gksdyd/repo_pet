@@ -26,4 +26,12 @@ public class AddrService {
 	public int update(AddrDto addrDto) {
 		return addrDao.update(addrDto);
 	}
+	
+	public int delete(AddrDto addrDto) {
+		return addrDao.delete(addrDto);
+	}
+	
+	public int deleNy(AddrDto addrDto) {
+		return addrDao.deleNy(addrDto);
+	}
 }

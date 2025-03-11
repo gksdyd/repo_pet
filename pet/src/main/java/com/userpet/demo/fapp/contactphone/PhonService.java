@@ -26,4 +26,12 @@ public class PhonService {
 	public int update(PhonDto phonDto) {
 		return phonDao.update(phonDto);
 	}
+	
+	public int delete(PhonDto phonDto) {
+		return phonDao.delete(phonDto);
+	}
+	
+	public int deleNy(PhonDto phonDto) {
+		return phonDao.deleNy(phonDto);
+	}
 }

@@ -24,7 +24,8 @@
 			compDepartment,
 			compPosition,
 			compMain,
-			contactAdd_contSeq
+			contactAdd_contSeq,
+			deleNy
 		from
 			contactcompany
 		where 1=1
@@ -38,13 +39,15 @@
 		    compDepartment,
 		    compPosition,
 			contactAdd_contSeq,
-		    compMain
+		    compMain,
+		    deleNy
 		) values (
 			#{compName},
 			#{compDepartment},
 			#{compPosition},
 			#{contactAdd_contSeq},
-			#{compMain}
+			#{compMain},
+			0
 		)
 		<selectKey resultType="String" keyProperty="compSeq" order="AFTER">
 			SELECT last_insert_id()
@@ -59,6 +62,20 @@
 		    compPosition = #{compPosition},
 			contactAdd_contSeq = #{contactAdd_contSeq},
 		    compMain = #{compMain}
+		where
+			compSeq = #{compSeq}
+	</update>
+	
+	<delete id="delete">
+		delete from contactcompany
+		where
+			compSeq = #{compSeq}
+	</delete>
+	
+	<update id="deleNy">
+		update contactcompany
+		set
+			deleNy = 1
 		where
 			compSeq = #{compSeq}
 	</update>
